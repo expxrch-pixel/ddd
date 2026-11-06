@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OTF — onythefamily</title>
+  
+  <link rel="icon" type="image/png" href="otf-logo.png">
+  <link rel="shortcut icon" href="otf-logo.png" type="image/x-icon">
+  <link rel="apple-touch-icon" href="otf-logo.png">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="home-page">
+
+  <div class="site-backdrop" aria-hidden="true"></div>
+  <div class="ambient-glow-mesh" aria-hidden="true"></div>
+  <canvas id="weatherCanvas"></canvas>
+
+  <!-- Navigation Topbar -->
+  <header class="topbar shell">
+    <a class="brand" href="index.html" aria-label="OTF Home">
+      <div class="brand-box">
+        <img src="otf-logo.png" alt="OTF Logo">
+      </div>
+      <div class="brand-text">
+        <span class="brand-word">OTF</span>
+        <span class="brand-sub">onythefamily</span>
+      </div>
+    </a>
+
+    <nav class="nav" aria-label="Main Navigation">
+      <a class="active" href="index.html">Home</a>
+      <a href="members.html">Members</a>
+    </nav>
+  </header>
+
+  <!-- Main Hero Section -->
+  <main class="minimal-home shell">
+    <section class="minimal-home-copy">
+      <div class="brand-title-wrap">
+        <h1>OTF</h1>
+        <div class="minimal-home-subtitle">onythefamily</div>
+      </div>
+      <p class="minimal-tagline"></p>
+
+      <div class="minimal-home-actions">
+        <a class="primary-button" href="members.html">
+          ดูรายชื่อสมาชิก <span>→</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- 3D Rotating Logo -->
+    <aside class="minimal-home-showcase" aria-label="OTF 3D Logo">
+      <div class="home-logo-rotator">
+        <div class="logo-3d-card">
+          <img class="logo-3d-face front" src="otf-logo.png" alt="OTF Logo">
+          <img class="logo-3d-face back" src="otf-logo.png" alt="OTF Logo">
+        </div>
+      </div>
+    </aside>
+  </main>
+
+  <!-- OTF Dark Theme Music Player Widget -->
+  <div class="otf-music-player">
+    <button id="playPauseBtn" class="player-cover-btn" aria-label="Play/Pause Music">
+      <img src="otf-logo.png" alt="OTF Disc Cover" class="player-cover-img">
+      <div class="player-play-overlay">
+        <svg id="playIcon" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+        <svg id="pauseIcon" viewBox="0 0 24 24" fill="currentColor" style="display:none;"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
+      </div>
+    </button>
+    
+    <div class="player-track-info">
+      <span class="track-title">Took Her to the O</span>
+      <span class="track-artist">King Von (OTF Clan Theme)</span>
+      <div class="track-equalizer" id="equalizer">
+        <span></span><span></span><span></span><span></span>
+      </div>
+    </div>
+
+    <div class="player-controls">
+      <button class="player-nav-btn" aria-label="Next track">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6 18l8.5-6L6 6v12zM16 6v12h2V6h-2z"/></svg>
+      </button>
+      <button id="minimizeBtn" class="player-nav-btn" aria-label="Minimize player">_</button>
+    </div>
+
+    <audio id="bgMusic" src="OTF.mp3" loop preload="auto"></audio>
+  </div>
+
+  <footer class="site-footer">
+    <p>@2026 OTF-Onythefamily By WINTERFELL</p>
+  </footer>
+
+  <script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore-compat.js"></script>
+  <script src="firebase-config.js"></script>
+  <script src="members-data.js"></script>
+  <script src="ui-effects.js"></script>
+  <script src="music-player.js"></script>
+</body>
+</html>
